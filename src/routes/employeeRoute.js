@@ -1,27 +1,17 @@
 const express = require('express');
 const app  = express.Router();
 const employeecontroller = require('../controllers/employeeController');
-
-app.get("/employee",employeecontroller.getEmployee);
 //
-app.get("/employee/:id",employeecontroller.getEmployee);
+app.get("/",employeecontroller.getEmployee);
 //
-app.get("/employee/tax/:sal",employeecontroller.getEmployee);
+app.get("/:id",employeecontroller.getEmployeeId);
 //
-app.get("/employee/retire/:age",employeecontroller.getEmployee);
+app.get("/tax/:sal",employeecontroller.getEmployeeSalaye);
 //
-app.post("/employee",employeecontroller.addEmployee);
-
-
-
-
-
-
-
-
-
-
-
+app.get("/retire/:age",employeecontroller.getEmployeeAge);
+//
+app.post("/",employeecontroller.addEmployee);
+//
 
 
 module.exports = app;
